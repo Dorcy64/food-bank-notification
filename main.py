@@ -20,8 +20,7 @@ for x in media[0:3]:
     image_text = x.get('url')
     parameters = {
         "apikey": OCR_API_KEY,
-        # "url": image_text,
-        "url": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-9/155515999_10159574682472868_783250512792373925_o.png?_nc_cat=104&ccb=1-3&_nc_sid=730e14&_nc_ohc=9D621smJCTAAX-T_1sY&_nc_ht=scontent-dfw5-2.xx&oh=d72b565fde7977c794f8543b7c04fb39&oe=60716A83",
+        "url": image_text,
     }
     new_text = requests.get(url="https://api.ocr.space/parse/imageurl", params=parameters)
     words.append(new_text.json())
